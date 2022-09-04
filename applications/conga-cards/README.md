@@ -39,10 +39,33 @@ Fetching credentials is covered in detail in the [getting started guide](https:/
 After your credentials are added, go ahead and run the app:
 
 ```
-node app.js
+node src/app.js
 ```
 
 > ⚙️ A package [like `nodemon`](https://github.com/remy/nodemon), which watches for local changes and restarts your app, may be helpful while locally developing.
+
+
+### Running the app in docker 
+
+This project contains a Dockerfile which can be used to build the app and 
+distribute in a container for deployment to a remote Kubernetes cluster.
+
+- Build the docker image: 
+```shell
+docker build -t conga-cards .
+```
+
+- Run the docker image, binding to port 3000 on the local system: 
+```shell
+docker run \
+  --rm \
+  --name conga-cards \
+  --env-file .env \
+  -p 3000:3000 \
+  conga-cards
+```
+
+- TODO: Deployment and Ingress on a remote k8s cluster.
 
 ### Set up interactivity
 
