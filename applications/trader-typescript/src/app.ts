@@ -3,7 +3,6 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
 import { Command, commands } from './commands';
 import { newGatewayConnection, newGrpcConnection } from './connect';
 import { ExpectedError } from './expectedError';
