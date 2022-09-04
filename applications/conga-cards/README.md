@@ -1,9 +1,26 @@
-# Block Paper Scissors
+# Conga Cards
 
-This project contains a basic illustration of integrating a Hyperledger Fabric 
-Gateway Client application with a Discord Integrations application.
+This project contains a basic illustration of integrating a Hyperledger Fabric Gateway Client with a Discord  
+interaction app.
 
-This project is based on the [#discord Getting Started](todo) guide.
+This project is based on the [#discord Getting Started](todo) guide and Fabric ApplicationDev guide for working
+with chaincode event handlers.
+
+When the conga-cards application has been installed on a guild / channel, users in a discord chat can issue
+`/create` and `/transfer` commands to trade conga NFTs between users on the server.
+
+The application subcribes to the chaincode event loop in order to replay a "journal," maintaining
+a state table of cards currently held by each user.  When a card is transferred, a chaincode transaction
+will be issued to the Gateway service and replayed by the event handler.
+
+In this basic application, cards can be created and exchanged freely between users.  Can this be extended with
+a more realistic card trading game?  Some seed / starter ideas:
+
+- _Block Paper Scissors_
+- _Rho Sham Block_ (like block-paper-scissors...) 
+- _Block-e-mon_
+- _Block Fish_
+- ... 
 
 
 ## Running app locally
